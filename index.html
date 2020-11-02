@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Página</title>
+</head>
+<body>
+
+<div class="container-head">
+    <div class="logos">
+        <a href="" class="logo"><img src="img/logo-ute.png" alt="logo" width="90px" height="90px" ></a>
+    </div> 
+</div>
+
+      
+
+<header>
+    <div class="container-menu logo-nav-contenedor">
+        <span class="menu-icon"><i class="fas fa-bars"></i></span>
+        <nav class="navegacion">
+            <ul class="show">
+                <li><a href="#">Enlace#1</a></li>
+                <li><a href="#">Enlace#2</a></li>
+                <li><a href="#">Enlace#3</a></li>
+                <li><a href="#">Enlace#4</a></li>
+                <li><a href="#">Enlace#5</a></li>
+                <li><a href="#">Enlace#6</a></li>
+                <li><a href="#">Enlace#7</a></li>
+            </ul>
+        </nav>
+      </div>
+</header>
+
+
+<div class="container-general">
+<main>
+<div class="container-cuerpo">
+<div class="columna_izquierda">
+    <div class="contenido_1">
+        <strong><h3>Temas</h3></strong>
+    </div>
+    <div class="contenido_2">
+        <nav class="navegacion_2">
+            <ul class="show_2">
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i>Expresiones Lambda</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i>Interfaces de Java 8</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i>ForkJoin</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i>Tema 4</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i>Tema 5</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i>Tema 6 </a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="columna_derecha">
+    <h1>Computación Paralela y Distribuida</h1>
+    <p>En los últimos años los sistemas distribuidos cobraron gran importancia debido a la crecientes mejoras en las redes de computadoras. 
+    La reciente adopción masiva por parte de la industria y la academia de clusters, clouds y Grids hizo posible una gran disponibilidad de plataformas de 
+    computación distribuida a bajo costo. Por otro lado, se popularizaron enormemente 
+    las computadoras con múltiples procesadores y núcleos, haciendo que el software paralelo deje de ser exclusivo de ambientes especializados y de 
+    computación de alto desempeño. <br><br>El uso y desarrollo eficiente de sistemas distribuidos y paralelos es de crucial importancia debido a que 
+    la mayoría de los sistemas que se desarrollan en la actualidad son distribuidos y/o paralelos.
+    El curso tiene por objetivo introducir al alumno al área de computación paralela y distribuida, sus conceptos, herramientas y aplicaciones. 
+    Se pretende dar una visión sobre el desarrollo de software paralelo y distribuido, incluyendo plataformas, lenguajes de programación y herramientas.</p>
+
+    <h1>Computación Paralela</h1>
+    <p>La computación paralela es una técnica de programación en la que muchas instrucciones se ejecutan simultáneamente. Se basa en el principio de que los problemas 
+        grandes se pueden dividir en partes más pequeñas que pueden resolverse de forma concurrente (“en paralelo”).</p>
+
+    <h2>Tipos de computación Paralela</h2>
+    <h3>Paralelismo a nivel de bit</h3>
+    <p>Desde el advenimiento de la integración a gran escala (VLSI) como tecnología de fabricación de chips de computadora en la década de 1970 hasta alrededor de 1986, 
+        la aceleración en la arquitectura de computadores se lograba en gran medida duplicando el tamaño de la palabra en la computadora, la cantidad de información que el 
+        procesador puede manejar por ciclo. El aumento del tamaño de la palabra reduce el número de instrucciones que el procesador debe ejecutar para realizar una operación 
+        en variables cuyos tamaños son mayores que la longitud de la palabra.<br><br> Por ejemplo, cuando un procesador de 8 bits debe sumar dos enteros de 16 bits, el procesador primero 
+        debe adicionar los 8 bits de orden inferior de cada número entero con la instrucción de adición, a continuación, añadir los 8 bits de orden superior utilizando la instrucción 
+        de adición con acarreo que tiene en cuenta el bit de acarreo de la adición de orden inferior, en este caso un procesador de 8 bits requiere dos instrucciones para completar una 
+        sola operación, en donde un procesador de 16 bits necesita una sola instrucción para poder completarla.
+    </p>
+    <h3>Paralelismo a nivel de Instrucción</h3>
+    <p>Un programa de ordenador es, en esencia, una secuencia de instrucciones ejecutadas por un procesador. 
+        Estas instrucciones pueden reordenarse y combinarse en grupos que luego son ejecutadas en paralelo sin cambiar el resultado del programa. 
+        Esto se conoce como paralelismo a nivel de instrucción. 
+        Los avances en el paralelismo a nivel de instrucción dominaron la arquitectura de computadores desde mediados de 1980 hasta mediados de la década de 1990. <br><br>
+        Los procesadores modernos tienen ”pipeline” de instrucciones de varias etapas. 
+        Cada etapa en el pipeline corresponde a una acción diferente que el procesador realiza en la instrucción correspondiente a la etapa;
+         un procesador con un pipeline de N etapas puede tener hasta n instrucciones diferentes en diferentes etapas de finalización. El ejemplo canónico de un procesador segmentado es un procesador RISC,
+          con cinco etapas: pedir instrucción, decodificar, ejecutar, acceso a la memoria y escritura. El procesador Pentium 4tenía un pipeline de 35 etapas. <br><br>
+         Además del paralelismo a nivel de instrucción del pipelining, algunos procesadores pueden ejecutar más de una instrucción a la vez.
+          Estos son conocidos como procesadores superes calares. Las instrucciones pueden agruparse juntas sólo si no hay dependencia de datos entre ellas. 
+          El scoreboarding y el algoritmo de Tomasulo (que es similar a scoreboarding pero hace uso del ) son dos de las técnicas más comunes para implementar la ejecución fuera de orden y 
+          la paralelización a nivel de instrucción.<br></p>
+    <h3>Paralelismo a nivel de Datos</h3>
+    <p>El paralelismo de datos es el paralelismo inherente en programas con ciclos, que se centra en la distribución de los datos entre los diferentes 
+        nodos computacionales que deben tratarse en paralelo. La paralelización de ciclos conduce a menudo a secuencias similares de operaciones (no necesariamente idénticas) 
+        o funciones que se realizan en los elementos de una gran estructura de datos. Muchas de las aplicaciones científicas y de ingeniería muestran paralelismo de datos. <br><br>
+        Una dependencia de terminación de ciclo es la dependencia de una iteración de un ciclo en la salida de una o más iteraciones anteriores. Las dependencias de terminación de 
+        ciclo evitan la paralelización de ciclos. <br><br>
+        Este bucle no se puede paralelizar porque CUR depende de sí mismo (PREV2) y de PREV1, que se calculan en cada iteración del bucle. 
+        Dado que cada iteración depende del resultado de la anterior, no se pueden realizar en paralelo. A medida que el tamaño de un problema 
+        se hace más grande, la paralelización de datos disponible generalmente también lo hace.<br><br></p>
+</section>
+
+<div class="container_busqueda">
+   
+    <div class="div_input"><input type="text" id="formulario_busqueda"></div>
+    <button id="boton">Buscar</button>
+    <ul id="resultado">
+        
+    </ul>
+</div>
+</div>
+</div>
+</main>
+
+
+<footer>
+    <div class="container-pie">
+        
+    </div>
+</footer>
+</div>
+
+<script src="js/jQuery.js"></script>
+<script src="js/scripts.js"></script>
+
+
+
+<script>
+    const temas = [
+        {titulo: '<a href="#">Expresiones Lambda</a></li>'},
+        {titulo: '<a href="#">Interfaces de Java 8</a></li>'},
+        {titulo: '<a href="#">ForkJoin</a></li>'},
+        {titulo: '<a href="#">Tema 4</a></li>'} ,
+        {titulo: '<a href="#">Tema 5</a></li>'} ,
+        {titulo: '<a href="#">Tema 6</a></li>'} ,
+    ]
+    const formulario= document.querySelector('#formulario_busqueda');
+    const boton= document.querySelector('#boton');
+    const resultado=document.querySelector('#resultado');
+
+    const filtrar = ()=>{
+       // console.log(formulario.value);
+       resultado.innerHTML='';
+
+       const texto = formulario.value.toLowerCase();
+       for(let tema of temas ){
+           let titulo=tema.titulo.toLowerCase();
+           if(titulo.indexOf(texto) !== -1){
+               
+                resultado.innerHTML += '<li>'+tema.titulo+'</li>'
+         }
+        }
+        if(resultado.innerHTML===''){
+            resultado.innerHTML += '<li>Tema no Encontrado...</li>'
+        }
+    }
+    boton.addEventListener('click',filtrar)
+</script>
+</body>
+</html>
